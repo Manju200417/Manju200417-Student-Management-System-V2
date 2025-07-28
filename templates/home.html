@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <div class="main-content">
+        <!-- Nav -->
+        <div class="navbar">
+            <h1>Student Management</h1>
+            <div>
+                <a href="#">Hi, {{ username }}</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <h2>What would you like to do?</h2>
+
+            <div class="card-container">
+                <a href="/add_student" class="card">
+                    <h3>Add Student</h3>
+                    <p>Register a new student into the system</p>
+                </a>
+                <a href="/update_student" class="card">
+                    <h3>Update Student</h3>
+                    <p>Edit existing student details</p>
+                </a>
+                <a href="/delete_student" class="card">
+                    <h3>Delete Student</h3>
+                    <p>Remove a student from records</p>
+                </a>
+                <a href="/search_student" class="card">
+                    <h3>Search Student</h3>
+                    <p>Find students using filters</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact">
+        <h2>Follow Me</h2>
+        <div class="social-media-icons">
+            <a href="https://github.com/Manju200417" target="_blank"><img
+                    src="{{ url_for('static', filename='img/github.svg') }}" alt="Github"></a>
+            <a href="https://www.linkedin.com/in/manju-alagawadi-483508243/" target="_blank"><img
+                    src="{{ url_for('static', filename='img/linkedin.svg') }}" alt="Linkedin"></a>
+            <a href="mailto:manjuguru814@gmail.com" target="_blank"><img
+                    src="{{ url_for('static', filename='img/email.svg') }}" alt="Email"></a>
+            <a href="https://www.instagram.com/manju_200417/" target="_blank"><img
+                    src="{{ url_for('static', filename='img/inst.svg') }}" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2025 Manjunath Alagawadi</p>
+    </div>
+</body>
+
+</html>

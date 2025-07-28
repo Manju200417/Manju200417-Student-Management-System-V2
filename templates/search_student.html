@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_student.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='universal.css') }}">
+
+    <title>Search Student</title>
+    <style>
+        @media (max-width: 768px) {
+            .results {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .results table {
+                min-width: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container{% if error %} shake{% endif %}">
+        <h2>Search Student Records</h2>
+        <form method="POST">
+            <label for="field">Search By:</label>
+            <select name="field" id="field" required>
+                <option value="id">ID</option>
+                <option value="name">Name</option>
+                <option value="age">Age</option>
+                <option value="course">Course</option>
+            </select>
+
+            <label for="value">Enter Value:</label>
+            <input type="text" name="value" id="value" placeholder="Enter search value" required>
+
+            <input type="submit" value="Search">
+        </form>
+
+        <form method="POST" style="margin-top: 10px;">
+            <input type="hidden" name="show_all" value="1">
+            <input type="submit" value="Show All Students">
+        </form>
+
+
+
+        {% if msg %}
+        <p class="msg">{{ msg }}</p>
+        {% endif %}
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if students %}
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student[0] }}</td>
+                        <td>{{ student[1] }}</td>
+                        <td>{{ student[2] }}</td>
+                        <td>{{ student[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+        <a href="/home" class="dashboard-btn">Go to Home</a>
+    </div>
+</body>
+
+</html>

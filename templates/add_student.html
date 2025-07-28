@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='universal.css') }}">
+    <title>Add Student</title>
+</head>
+
+<body>
+    <div class="blur-wrapper">
+        <div class="container{% if error %} shake{% endif %}">
+            <h2>Add New Student</h2>
+            <form method="POST">
+                <!-- <label for="id">Student ID:</label> -->
+                <input type="number" name="id" inputmode="numeric" pattern="\d+" placeholder="Student ID" required>
+
+                <!-- <label for="name">Name:</label> -->
+                <input type="text" name="name" pattern="^[A-Za-z][A-Za-z0-9]*$"
+                    title="Name must start with letters, numbers are optional" placeholder="Name" required>
+
+                <!-- <label for="age">Age:</label> -->
+                <input type="number" name="age" inputmode="numeric" min="1" max="100" placeholder="Age" required>
+
+                <!-- <label for="course">Course:</label> -->
+                <input type="text" name="course" pattern="^[A-Za-z][A-Za-z0-9]*$"
+                    title="Course must start with letters, numbers are optional" placeholder="Course" required>
+
+                <!-- <label for="year">Year:</label> -->
+                <input type="text" name="year" pattern="^\d{4}$" title="Year must be a 4-digit number (e.g., 2025)"
+                    placeholder="Year" required>
+
+                <input type="submit" value="Add Student">
+            </form>
+
+            {% if msg %}
+            <p class="msg">{{ msg }}</p>
+            {% endif %}
+
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <a href="/home" class="dashboard-btn">Go to Home</a>
+        </div>
+    </div>
+</body>
+
+</html>

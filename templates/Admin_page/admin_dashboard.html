@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_style.css') }}">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p>Welcome, Manju(Admin)</p>
+    </header>
+
+    <div class="container">
+        <h2>Manage</h2>
+
+        <div class="card">
+            <span>View All Users</span>
+            <button class="btn" onclick="location.href='/admin/users_view'">Open</button>
+        </div>
+
+        <div class="card">
+            <span>View All Students</span>
+            <button class="btn" onclick="location.href='/admin/students_view'">Open</button>
+        </div>
+
+        <div class="actions">
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

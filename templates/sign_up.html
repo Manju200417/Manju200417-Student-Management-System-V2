@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth_style.css') }}">
+
+    <title>Create New Accountt</title>
+</head>
+
+<body style="height: 90vh;">
+    <form method="POST">
+        <h2>Create New Account</h2>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required minlength="8">
+        <input type="password" name="re_password" placeholder="Re-enter Password" required minlength="8">
+        <input type="submit" value="Sign-Up">
+        <p>Already have an account? <a href="/">Login</a></p>
+    </form>
+</body>
+
+</html>

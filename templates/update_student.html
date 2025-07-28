@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='universal.css') }}">
+
+    <title>Update Student</title>
+</head>
+
+<body>
+    <div class="container{% if error %} shake{% endif %}" style="margin: 29px auto;">
+        <h2>Update Student Details</h2>
+        <form method="POST">
+            <label for="id">Student ID <span style="color:red">*</span></label>
+            <input type="number" name="id" id="id" placeholder="Required" required>
+
+            <label for="name">New Name</label>
+            <input type="text" name="name" id="name" placeholder="(Optional)">
+
+            <label for="age">New Age</label>
+            <input type="number" name="age" id="age" placeholder="(Optional)" min="1" max="100">
+
+            <label for="course">New Course</label>
+            <input type="text" name="course" id="course" placeholder="(Optional)">
+
+            <input type="submit" value="Update">
+        </form>
+
+        {% if msg %}
+        <p class="msg">{{ msg }}</p>
+        {% endif %}
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <a href="/home" class="dashboard-btn">Go to Home</a>
+    </div>
+</body>
+
+</html>
