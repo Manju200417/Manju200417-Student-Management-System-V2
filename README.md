@@ -1,11 +1,11 @@
 # Student-Management-System-V2
 
-🎓 **Student Management System V2**  
+ **Student Management System V2**  
 A responsive full-stack web application to manage student records, built using **Flask**, **SQLite**, **HTML**, and **CSS**.
 
 ---
 
-## ✨ Features
+##  Features
 
 - **User Authentication**  
   Secure sign-up and login system to manage access.
