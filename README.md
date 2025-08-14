@@ -10,6 +10,9 @@ A responsive full-stack web application to manage student records, built using *
 - **User Authentication**  
   Secure sign-up and login system to manage access.
 
+- **Personalized Data Management**  
+  Each user can add, update, and manage **their own** student records.
+
 - **Admin Dashboard**  
   Dashboard accessible only to authenticated users.
 
